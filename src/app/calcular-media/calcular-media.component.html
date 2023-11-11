@@ -1,0 +1,29 @@
+<div style="padding-left: 5px;">
+    <h1>Calcular Média</h1>
+    <div>
+        <label style="padding-top: 5px;" for="ac1">AC1:</label>
+        <input type="number" [(ngModel)]="ac1" />
+    </div>
+    <div>
+        <label style="padding-top: 5px;" for="ac2">AC2:</label>
+        <input type="number" [(ngModel)]="ac2" />
+    </div>
+    <div>
+        <label style="padding-top: 5px;" for="ag">AG:</label>
+        <input type="number" [(ngModel)]="ag" />
+    </div>
+    <div>
+        <label style="padding-top: 5px;" for="af">AF:</label>
+        <input type="number" [(ngModel)]="af" />
+    </div>
+    <div style="padding-top: 5px;">
+        <button class="btn btn-outline-primary" (click)="calcular()">Calcular</button>
+    </div>
+
+    <div>
+        <p>Média: {{ media }}</p>
+        <p>{{ resultado }}</p>
+    </div>
+
+  </div>
+  

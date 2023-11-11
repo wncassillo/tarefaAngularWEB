@@ -1,0 +1,39 @@
+<div style="padding-left: 5px;">
+    <h1>Cadastro de Aluno</h1>
+    <div>
+        <div>
+            <label for="ra">RA:</label>
+            <input type="text" placeholder="00000" [(ngModel)]="ra" required />
+        </div>
+        <div style="padding-top: 5px;">
+            <label for="nome">Nome:</label>
+            <input type="text" placeholder="Fulano" [(ngModel)]="nome" required />
+        </div> 
+        <div style="padding-top: 5px;">
+            <label for="email">Email:</label>
+            <input type="email" placeholder="fulano@email.com" [(ngModel)]="email" required />
+        </div >
+        <div style="padding-top: 5px;">
+            <label for="celular">Celular:</label>
+            <input type="tel" placeholder="(00) 12345 6789" [(ngModel)]="celular" required />
+        </div> 
+    </div>
+    <div style="padding-top: 5px;">
+        <button class="btn btn-outline-primary" (click)="cadastrarAluno()">Cadastrar</button>     
+    </div>
+
+    <div id='result' *ngIf="dadosValidos !== null">
+        <div *ngIf="!dadosValidos" style="color: red;">Preencha todos os campos para cadastrar um aluno.</div>
+        <div *ngIf="dadosValidos">
+            <h2 style="color: aqua;">Aluno cadastrado com sucesso!</h2>
+            <p>Os dados cadastrados foram:</p>
+            <ul>
+                <li>RA: {{ra}}</li>
+                <li>Nome: {{nome}}</li>
+                <li>E-mail: {{email}}</li>
+                <li>Celular: {{celular}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+

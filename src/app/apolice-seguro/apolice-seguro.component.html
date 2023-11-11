@@ -1,0 +1,43 @@
+<div style="padding-left: 5px;">
+    <h1>Apólice de Seguros</h1>
+</div>
+<div style="display: flex;justify-content: left; padding-left: 5px; ">
+    <div style="display: flex;flex-direction: column;">
+        <div>
+            <div>
+                <label for="nome">Nome:</label>
+            </div>
+            <input type="text" placeholder="Fulano" style="padding-top: 5px; margin-left: 5px;" [(ngModel)]="nome"/>
+        </div>
+        <div>
+            <div>
+                <label for="valor">Valor do Veículo:</label>
+            </div>
+            <input type="number" style="padding-top: 5px; margin-left: 5px;" [(ngModel)]="valor" required />
+        </div> 
+        <div style="padding-top: 5px;">
+            <label for="sexo" style="padding-right: 5px;">Sexo:</label>
+            <select name="sexo" id="sexo" style="padding-top: 5px; margin-left: 5px; width: 95px" [(ngModel)]="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+        </div> 
+        <div style="padding-top: 5px;">
+            <label for="idade" style="padding-right: 5px;">Idade:</label>
+            <input type="number" style="padding-top: 5px; width: 70px; " [(ngModel)]="idade" required />
+        </div>
+        <div style="padding-top: 5px; ">
+            <button class="btn btn-outline-primary" (click)="calcular()" style="width: 190px">Calcular</button>    
+        </div>
+    </div>
+
+    <div *ngIf="apolice !== null" style="display: flex;flex-direction: column; margin-left: 20px; align-items: center;">
+        <div *ngIf="!dadosValidos" style="color: red;">Preencha todos os campos necessários para calcular uma apólice.</div>
+        <div *ngIf="dadosValidos">
+            <h2>O valor do Seguro ficou em:</h2>
+            <h3 style="color: green;">R$ {{apolice}}</h3>
+        </div>
+        
+    </div>
+</div>
+        

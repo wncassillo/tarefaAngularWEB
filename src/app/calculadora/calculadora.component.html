@@ -1,0 +1,27 @@
+<div style="padding-left: 5px;">
+    <h1>Calculadora</h1>
+    <div>
+        <label for="firstNumber">Primeiro Número:</label>
+        <input type="number" [(ngModel)]="firstNumber" />
+        <br>
+        <label style="padding-top: 5px;" for="secondNumber">Segundo Número:</label>
+        <input type="number" [(ngModel)]="secondNumber" />
+        <br>
+        <label style="padding-top: 5px;" for="operation">Operação:</label>
+        <select name="operation" id="operation" [(ngModel)]="operation">
+            <option value="+">+ Adição</option>
+            <option value="-">- Subtração</option>
+            <option value="*">* Multiplicação</option>
+            <option value="/">/ Divisão</option>
+       </select>
+        
+        
+    </div>
+    <div style="padding-top: 5px;">
+        <button class="btn btn-outline-primary" (click)="calcular()">Calcular</button>
+    </div>
+    <div>
+        <h2 style="color: green;">{{result}}</h2>
+    </div>
+
+</div>
